@@ -1,0 +1,3 @@
+Estamos leyendo el archivo TXT
+
+varias lineas de codigo
