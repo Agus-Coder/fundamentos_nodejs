@@ -1,4 +1,4 @@
-function hola(nombre) {
+async function hola(nombre) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             console.log('Hola ' + nombre + '!')
@@ -9,7 +9,7 @@ function hola(nombre) {
 
 }
 
-function hablar(nombre) {  //Mirar lo que sucede si quitas la variable "Nombre"
+async function hablar(nombre) {  //Mirar lo que sucede si quitas la variable "Nombre"
     return new Promise((resolve, reject) => {
         setTimeout(function () {
             console.log('bla bla bla bla bla...')
@@ -20,7 +20,7 @@ function hablar(nombre) {  //Mirar lo que sucede si quitas la variable "Nombre"
 
 }
 
-function adios(nombre) {
+async function adios(nombre) {
     return new Promise((resolve, reject) => {
         setTimeout(function () {
             console.log('Adios ' + nombre + '!')
@@ -29,3 +29,13 @@ function adios(nombre) {
         }, 1000)
     })
 }
+
+async function main(){
+    let nombre = await hola('agus')
+    await hablar()
+}
+
+//convertimos algo asincrono en algo que parece sincrono
+console.log('inicia el proceso')
+main()
+console.log('Termina el proceso')
